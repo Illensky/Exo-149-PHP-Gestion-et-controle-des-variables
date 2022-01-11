@@ -8,8 +8,13 @@
 $var = 0;
 // TODO votre code ici.
 
-
-
+if (empty($var)) {
+    echo "vide";
+}
+else {
+    echo "pas vide";
+}
+echo "<br><br>";
 
 /**
  * 2. Détruisez la variable déclarée, tentez de l'afficher ensuite en utilisant un print_r.
@@ -17,20 +22,25 @@ $var = 0;
 $eraseMe = "Please erase me !";
 // TODO votre code ici.
 
-
+unset($eraseMe);
+print_r($eraseMe);
+echo "<br><br>";
 /**
  * 3. Déclarez vous même un tableau et utilisez var_dump pour afficher toutes les informations de debug.
  */
 // TODO votre code ici.
 
-echo "<br>";
+$array = [1,2,3,4,5];
+var_dump($array);
+echo "<br><br>";
 
 /**
  * 4. Faites la même chose avec le même tableau, mais pour la méthode print_r.
  */
 // TODO votre code ici.
 
-echo "<br>";
+print_r($array);
+echo "<br><br>";
 
 
 /**
@@ -39,8 +49,13 @@ echo "<br>";
  */
 $tab = ["test" => true, "name" => "Doe", "age" => 32];
 // TODO Votre code ici.
-
-
+if (isset($tab["doNotExists"])) {
+    echo "Existe";
+}
+else {
+    echo "Existe pas";
+}
+echo "<br><br>";
 /**
  * 6. Créez une variable contenant:
  *    - un booléen
@@ -63,3 +78,17 @@ $tab = ["test" => true, "name" => "Doe", "age" => 32];
  */
 
 // TODO votre code ici.
+
+
+$bool = false;
+$int = 12;
+$float = 3.47;
+$string = "Chaine de caractére";
+function checkType ($var) {
+    echo "Ma variable est de type ".gettype($var).".<br>";
+}
+
+checkType($bool);
+checkType($int);
+checkType($float);
+checkType($string);
